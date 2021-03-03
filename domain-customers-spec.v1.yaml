@@ -23,7 +23,32 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CreateCustomerResponseViewModel'
+                title: CreateCustomerResponse
+                x-examples:
+                  example-1:
+                    CustomerId: fee63bf3-6cf1-4b7c-8f89-57f658895684
+                allOf:
+                  - title: BaseCommandResponseViewModel
+                    type: object
+                    properties:
+                      IsError:
+                        type: boolean
+                      ErrorMessage:
+                        type:
+                          - string
+                          - 'null'
+                    description: Base Command Response
+                    x-tags:
+                      - Synapse Modernization
+                      - ToolHive
+                  - type: object
+                    properties:
+                      CustomerId:
+                        type: string
+                description: Create Customer Response
+                x-tags:
+                  - Synapse Modernization
+                  - ToolHive
               examples:
                 example-1:
                   value:
@@ -34,27 +59,200 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/BaseCommandResponseViewModel'
+                  - title: BaseCommandResponseViewModel
+                    type: object
+                    properties:
+                      IsError:
+                        type: boolean
+                      ErrorMessage:
+                        type:
+                          - string
+                          - 'null'
+                    description: Base Command Response
+                    x-tags:
+                      - Synapse Modernization
+                      - ToolHive
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/BaseCommandResponseViewModel'
+                  - title: BaseCommandResponseViewModel
+                    type: object
+                    properties:
+                      IsError:
+                        type: boolean
+                      ErrorMessage:
+                        type:
+                          - string
+                          - 'null'
+                    description: Base Command Response
+                    x-tags:
+                      - Synapse Modernization
+                      - ToolHive
         '500':
           description: Internal Server Error
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/BaseCommandResponseViewModel'
+                  - title: BaseCommandResponseViewModel
+                    type: object
+                    properties:
+                      IsError:
+                        type: boolean
+                      ErrorMessage:
+                        type:
+                          - string
+                          - 'null'
+                    description: Base Command Response
+                    x-tags:
+                      - Synapse Modernization
+                      - ToolHive
       description: Add a new Customer.
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateCustomerRequestViewModel'
+              title: CreateCustomerRequest
+              description: Create Customer
+              x-examples: {}
+              allOf:
+                - title: BaseCommandRequestViewModel
+                  type: object
+                  description: Base Command Request
+                  properties:
+                    UserId:
+                      type: string
+                    UserName:
+                      type: string
+                    Environment:
+                      type: string
+                    ActivityId:
+                      type:
+                        - string
+                        - 'null'
+                    ParentPageId:
+                      type:
+                        - string
+                        - 'null'
+                    PageId:
+                      type:
+                        - string
+                        - 'null'
+                    SessionId:
+                      type:
+                        - string
+                        - 'null'
+                    Route:
+                      type:
+                        - string
+                        - 'null'
+                    Equipment:
+                      type:
+                        - string
+                        - 'null'
+                    AssignmentId:
+                      type:
+                        - string
+                        - 'null'
+                    DeviceIpV4:
+                      type:
+                        - string
+                        - 'null'
+                    DeviceIpV6:
+                      type:
+                        - string
+                        - 'null'
+                    UserAgent:
+                      type:
+                        - string
+                        - 'null'
+                    Path:
+                      type:
+                        - string
+                        - 'null'
+                    EpochTime:
+                      type:
+                        - string
+                        - 'null'
+                    ServerHostName:
+                      type:
+                        - string
+                        - 'null'
+                    Pid:
+                      type:
+                        - string
+                        - 'null'
+                    BusinessUnitId:
+                      type: string
+                    ApiRequestId:
+                      type:
+                        - string
+                        - 'null'
+                    AccountId:
+                      type: string
+                    Account:
+                      type: string
+                    BusinessUnit:
+                      type: string
+                    WareHouseId:
+                      type:
+                        - string
+                        - 'null'
+                  x-tags:
+                    - Synapse Modernization
+                    - ToolHive
+                - type: object
+                  properties:
+                    Name:
+                      type: string
+                    Abbreviation:
+                      type: string
+                    ContactName:
+                      type: string
+                    AddressLine1:
+                      type: string
+                    AddressLine2:
+                      type: string
+                    AddressLine3:
+                      type: string
+                    City:
+                      type: string
+                    State:
+                      type: string
+                    PostalCode:
+                      type: string
+                    Country:
+                      type: string
+                    Phone:
+                      type: string
+                    Email:
+                      type: string
+                    URL:
+                      type: string
+                    Logo:
+                      type: string
+                    MarketLineId:
+                      type: string
+                    IsActive:
+                      type: boolean
+                    ActiveDate:
+                      type: string
+                    InactiveDate:
+                      type: string
+                    IsDataRetention:
+                      type: boolean
+                    PersonalRetention:
+                      type: number
+                    OrderRetention:
+                      type: number
+                    IsMarketLineAccount:
+                      type: boolean
+              x-tags:
+                - Synapse Modernization
+                - ToolHive
             examples:
               example-1:
                 value:
@@ -95,31 +293,231 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UpdateCustomerResponseViewModel'
+                description: Update Customer Response
+                allOf:
+                  - title: BaseCommandResponseViewModel
+                    type: object
+                    properties:
+                      IsError:
+                        type: boolean
+                      ErrorMessage:
+                        type:
+                          - string
+                          - 'null'
+                    description: Base Command Response
+                    x-tags:
+                      - Synapse Modernization
+                      - ToolHive
+                  - type: object
+                    properties:
+                      IsError:
+                        type: boolean
+                      ErrorMessage:
+                        type:
+                          - string
+                          - 'null'
+                x-tags:
+                  - Synapse Modernization
+                  - ToolHive
+                title: ''
         '400':
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BaseCommandResponseViewModel'
+                title: BaseCommandResponseViewModel
+                type: object
+                properties:
+                  IsError:
+                    type: boolean
+                  ErrorMessage:
+                    type:
+                      - string
+                      - 'null'
+                description: Base Command Response
+                x-tags:
+                  - Synapse Modernization
+                  - ToolHive
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BaseCommandResponseViewModel'
+                title: BaseCommandResponseViewModel
+                type: object
+                properties:
+                  IsError:
+                    type: boolean
+                  ErrorMessage:
+                    type:
+                      - string
+                      - 'null'
+                description: Base Command Response
+                x-tags:
+                  - Synapse Modernization
+                  - ToolHive
         '500':
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BaseCommandResponseViewModel'
+                title: BaseCommandResponseViewModel
+                type: object
+                properties:
+                  IsError:
+                    type: boolean
+                  ErrorMessage:
+                    type:
+                      - string
+                      - 'null'
+                description: Base Command Response
+                x-tags:
+                  - Synapse Modernization
+                  - ToolHive
       description: Update a customer
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateCustomerRequestViewModel'
+              title: UpdateCustomerRequest
+              allOf:
+                - title: BaseCommandRequestViewModel
+                  type: object
+                  description: Base Command Request
+                  properties:
+                    UserId:
+                      type: string
+                    UserName:
+                      type: string
+                    Environment:
+                      type: string
+                    ActivityId:
+                      type:
+                        - string
+                        - 'null'
+                    ParentPageId:
+                      type:
+                        - string
+                        - 'null'
+                    PageId:
+                      type:
+                        - string
+                        - 'null'
+                    SessionId:
+                      type:
+                        - string
+                        - 'null'
+                    Route:
+                      type:
+                        - string
+                        - 'null'
+                    Equipment:
+                      type:
+                        - string
+                        - 'null'
+                    AssignmentId:
+                      type:
+                        - string
+                        - 'null'
+                    DeviceIpV4:
+                      type:
+                        - string
+                        - 'null'
+                    DeviceIpV6:
+                      type:
+                        - string
+                        - 'null'
+                    UserAgent:
+                      type:
+                        - string
+                        - 'null'
+                    Path:
+                      type:
+                        - string
+                        - 'null'
+                    EpochTime:
+                      type:
+                        - string
+                        - 'null'
+                    ServerHostName:
+                      type:
+                        - string
+                        - 'null'
+                    Pid:
+                      type:
+                        - string
+                        - 'null'
+                    BusinessUnitId:
+                      type: string
+                    ApiRequestId:
+                      type:
+                        - string
+                        - 'null'
+                    AccountId:
+                      type: string
+                    Account:
+                      type: string
+                    BusinessUnit:
+                      type: string
+                    WareHouseId:
+                      type:
+                        - string
+                        - 'null'
+                  x-tags:
+                    - Synapse Modernization
+                    - ToolHive
+                - type: object
+                  properties:
+                    Id:
+                      type: string
+                    Name:
+                      type: string
+                    Abbreviation:
+                      type: string
+                    ContactName:
+                      type: string
+                    AddressLine1:
+                      type: string
+                    AddressLine2:
+                      type: string
+                    AddressLine3:
+                      type: string
+                    City:
+                      type: string
+                    State:
+                      type: string
+                    PostalCode:
+                      type: string
+                    Country:
+                      type: string
+                    Phone:
+                      type: string
+                    Email:
+                      type: string
+                    URL:
+                      type: string
+                    Logo:
+                      type: string
+                    MarketLineId:
+                      type: string
+                    IsActive:
+                      type: boolean
+                    ActiveDate:
+                      type: string
+                    InactiveDate:
+                      type: string
+                    IsDataRetention:
+                      type: boolean
+                    PersonalRetention:
+                      type: number
+                    OrderRetention:
+                      type: number
+                    IsMarketLineAccount:
+                      type: boolean
+              description: Update Customer Request
+              x-tags:
+                - Synapse Modernization
+                - ToolHive
         description: Request Body
   /api/customer/logo/update:
     put:
@@ -131,31 +529,188 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UpdateCustomerLogoResponseViewModel'
+                title: UpdateCustomerLogoResponseViewModel
+                allOf:
+                  - title: BaseCommandResponseViewModel
+                    type: object
+                    properties:
+                      IsError:
+                        type: boolean
+                      ErrorMessage:
+                        type:
+                          - string
+                          - 'null'
+                    description: Base Command Response
+                    x-tags:
+                      - Synapse Modernization
+                      - ToolHive
+                  - type: object
+                    properties:
+                      IsError:
+                        type: boolean
+                      ErrorMessage:
+                        type:
+                          - string
+                          - 'null'
+                description: Update Customer Logo Response
+                x-tags:
+                  - Synapse Modernization
+                  - ToolHive
         '400':
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BaseCommandResponseViewModel'
+                title: BaseCommandResponseViewModel
+                type: object
+                properties:
+                  IsError:
+                    type: boolean
+                  ErrorMessage:
+                    type:
+                      - string
+                      - 'null'
+                description: Base Command Response
+                x-tags:
+                  - Synapse Modernization
+                  - ToolHive
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BaseCommandResponseViewModel'
+                title: BaseCommandResponseViewModel
+                type: object
+                properties:
+                  IsError:
+                    type: boolean
+                  ErrorMessage:
+                    type:
+                      - string
+                      - 'null'
+                description: Base Command Response
+                x-tags:
+                  - Synapse Modernization
+                  - ToolHive
         '500':
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BaseCommandResponseViewModel'
+                title: BaseCommandResponseViewModel
+                type: object
+                properties:
+                  IsError:
+                    type: boolean
+                  ErrorMessage:
+                    type:
+                      - string
+                      - 'null'
+                description: Base Command Response
+                x-tags:
+                  - Synapse Modernization
+                  - ToolHive
       description: Update Customer Logo
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateCustomerLogoRequestViewModel'
+              allOf:
+                - title: BaseCommandRequestViewModel
+                  type: object
+                  description: Base Command Request
+                  properties:
+                    UserId:
+                      type: string
+                    UserName:
+                      type: string
+                    Environment:
+                      type: string
+                    ActivityId:
+                      type:
+                        - string
+                        - 'null'
+                    ParentPageId:
+                      type:
+                        - string
+                        - 'null'
+                    PageId:
+                      type:
+                        - string
+                        - 'null'
+                    SessionId:
+                      type:
+                        - string
+                        - 'null'
+                    Route:
+                      type:
+                        - string
+                        - 'null'
+                    Equipment:
+                      type:
+                        - string
+                        - 'null'
+                    AssignmentId:
+                      type:
+                        - string
+                        - 'null'
+                    DeviceIpV4:
+                      type:
+                        - string
+                        - 'null'
+                    DeviceIpV6:
+                      type:
+                        - string
+                        - 'null'
+                    UserAgent:
+                      type:
+                        - string
+                        - 'null'
+                    Path:
+                      type:
+                        - string
+                        - 'null'
+                    EpochTime:
+                      type:
+                        - string
+                        - 'null'
+                    ServerHostName:
+                      type:
+                        - string
+                        - 'null'
+                    Pid:
+                      type:
+                        - string
+                        - 'null'
+                    BusinessUnitId:
+                      type: string
+                    ApiRequestId:
+                      type:
+                        - string
+                        - 'null'
+                    AccountId:
+                      type: string
+                    Account:
+                      type: string
+                    BusinessUnit:
+                      type: string
+                    WareHouseId:
+                      type:
+                        - string
+                        - 'null'
+                  x-tags:
+                    - Synapse Modernization
+                    - ToolHive
+                - type: object
+                  properties:
+                    Id:
+                      type: string
+                    Logo:
+                      type: string
+              description: Update Customer Logo Request View Model
+              x-tags:
+                - Synapse Modernization
+                - ToolHive
         description: Request body
       tags:
         - Synapse Modernization
@@ -170,13 +725,51 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UpdateCustomerLogoResponseViewModel'
+                title: UpdateCustomerLogoResponseViewModel
+                allOf:
+                  - title: BaseCommandResponseViewModel
+                    type: object
+                    properties:
+                      IsError:
+                        type: boolean
+                      ErrorMessage:
+                        type:
+                          - string
+                          - 'null'
+                    description: Base Command Response
+                    x-tags:
+                      - Synapse Modernization
+                      - ToolHive
+                  - type: object
+                    properties:
+                      IsError:
+                        type: boolean
+                      ErrorMessage:
+                        type:
+                          - string
+                          - 'null'
+                description: Update Customer Logo Response
+                x-tags:
+                  - Synapse Modernization
+                  - ToolHive
         '400':
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BaseCommandResponseViewModel'
+                title: BaseCommandResponseViewModel
+                type: object
+                properties:
+                  IsError:
+                    type: boolean
+                  ErrorMessage:
+                    type:
+                      - string
+                      - 'null'
+                description: Base Command Response
+                x-tags:
+                  - Synapse Modernization
+                  - ToolHive
             application/xml:
               schema:
                 type: object
@@ -186,22 +779,236 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BaseCommandResponseViewModel'
+                title: BaseCommandResponseViewModel
+                type: object
+                properties:
+                  IsError:
+                    type: boolean
+                  ErrorMessage:
+                    type:
+                      - string
+                      - 'null'
+                description: Base Command Response
+                x-tags:
+                  - Synapse Modernization
+                  - ToolHive
         '500':
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BaseCommandResponseViewModel'
+                title: BaseCommandResponseViewModel
+                type: object
+                properties:
+                  IsError:
+                    type: boolean
+                  ErrorMessage:
+                    type:
+                      - string
+                      - 'null'
+                description: Base Command Response
+                x-tags:
+                  - Synapse Modernization
+                  - ToolHive
       description: 'Create Customer Logo - This is identical to Update Customer Logo, so it is really an alias of Update.'
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateCustomerLogoRequestViewModel'
+              allOf:
+                - title: BaseCommandRequestViewModel
+                  type: object
+                  description: Base Command Request
+                  properties:
+                    UserId:
+                      type: string
+                    UserName:
+                      type: string
+                    Environment:
+                      type: string
+                    ActivityId:
+                      type:
+                        - string
+                        - 'null'
+                    ParentPageId:
+                      type:
+                        - string
+                        - 'null'
+                    PageId:
+                      type:
+                        - string
+                        - 'null'
+                    SessionId:
+                      type:
+                        - string
+                        - 'null'
+                    Route:
+                      type:
+                        - string
+                        - 'null'
+                    Equipment:
+                      type:
+                        - string
+                        - 'null'
+                    AssignmentId:
+                      type:
+                        - string
+                        - 'null'
+                    DeviceIpV4:
+                      type:
+                        - string
+                        - 'null'
+                    DeviceIpV6:
+                      type:
+                        - string
+                        - 'null'
+                    UserAgent:
+                      type:
+                        - string
+                        - 'null'
+                    Path:
+                      type:
+                        - string
+                        - 'null'
+                    EpochTime:
+                      type:
+                        - string
+                        - 'null'
+                    ServerHostName:
+                      type:
+                        - string
+                        - 'null'
+                    Pid:
+                      type:
+                        - string
+                        - 'null'
+                    BusinessUnitId:
+                      type: string
+                    ApiRequestId:
+                      type:
+                        - string
+                        - 'null'
+                    AccountId:
+                      type: string
+                    Account:
+                      type: string
+                    BusinessUnit:
+                      type: string
+                    WareHouseId:
+                      type:
+                        - string
+                        - 'null'
+                  x-tags:
+                    - Synapse Modernization
+                    - ToolHive
+                - type: object
+                  properties:
+                    Id:
+                      type: string
+                    Logo:
+                      type: string
+              description: Update Customer Logo Request View Model
+              x-tags:
+                - Synapse Modernization
+                - ToolHive
           application/xml:
             schema:
-              $ref: '#/components/schemas/UpdateCustomerLogoRequestViewModel'
+              allOf:
+                - title: BaseCommandRequestViewModel
+                  type: object
+                  description: Base Command Request
+                  properties:
+                    UserId:
+                      type: string
+                    UserName:
+                      type: string
+                    Environment:
+                      type: string
+                    ActivityId:
+                      type:
+                        - string
+                        - 'null'
+                    ParentPageId:
+                      type:
+                        - string
+                        - 'null'
+                    PageId:
+                      type:
+                        - string
+                        - 'null'
+                    SessionId:
+                      type:
+                        - string
+                        - 'null'
+                    Route:
+                      type:
+                        - string
+                        - 'null'
+                    Equipment:
+                      type:
+                        - string
+                        - 'null'
+                    AssignmentId:
+                      type:
+                        - string
+                        - 'null'
+                    DeviceIpV4:
+                      type:
+                        - string
+                        - 'null'
+                    DeviceIpV6:
+                      type:
+                        - string
+                        - 'null'
+                    UserAgent:
+                      type:
+                        - string
+                        - 'null'
+                    Path:
+                      type:
+                        - string
+                        - 'null'
+                    EpochTime:
+                      type:
+                        - string
+                        - 'null'
+                    ServerHostName:
+                      type:
+                        - string
+                        - 'null'
+                    Pid:
+                      type:
+                        - string
+                        - 'null'
+                    BusinessUnitId:
+                      type: string
+                    ApiRequestId:
+                      type:
+                        - string
+                        - 'null'
+                    AccountId:
+                      type: string
+                    Account:
+                      type: string
+                    BusinessUnit:
+                      type: string
+                    WareHouseId:
+                      type:
+                        - string
+                        - 'null'
+                  x-tags:
+                    - Synapse Modernization
+                    - ToolHive
+                - type: object
+                  properties:
+                    Id:
+                      type: string
+                    Logo:
+                      type: string
+              description: Update Customer Logo Request View Model
+              x-tags:
+                - Synapse Modernization
+                - ToolHive
         description: Request body
       tags:
         - Synapse Modernization
@@ -216,19 +1023,65 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DeleteCustomerLogoResponseViewModel'
+                title: DeleteCustomerLogoResponseViewModel
+                description: Delete Customer Logo Response View Model
+                x-tags:
+                  - Synapse Modernization
+                  - ToolHive
+                allOf:
+                  - title: BaseCommandResponseViewModel
+                    type: object
+                    properties:
+                      IsError:
+                        type: boolean
+                      ErrorMessage:
+                        type:
+                          - string
+                          - 'null'
+                    description: Base Command Response
+                    x-tags:
+                      - Synapse Modernization
+                      - ToolHive
+                  - type: object
+                    properties:
+                      Id:
+                        type: string
         '400':
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BaseCommandResponseViewModel'
+                title: BaseCommandResponseViewModel
+                type: object
+                properties:
+                  IsError:
+                    type: boolean
+                  ErrorMessage:
+                    type:
+                      - string
+                      - 'null'
+                description: Base Command Response
+                x-tags:
+                  - Synapse Modernization
+                  - ToolHive
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BaseCommandResponseViewModel'
+                title: BaseCommandResponseViewModel
+                type: object
+                properties:
+                  IsError:
+                    type: boolean
+                  ErrorMessage:
+                    type:
+                      - string
+                      - 'null'
+                description: Base Command Response
+                x-tags:
+                  - Synapse Modernization
+                  - ToolHive
         '403':
           description: Forbidden
         '500':
@@ -236,13 +1089,119 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BaseCommandResponseViewModel'
+                title: BaseCommandResponseViewModel
+                type: object
+                properties:
+                  IsError:
+                    type: boolean
+                  ErrorMessage:
+                    type:
+                      - string
+                      - 'null'
+                description: Base Command Response
+                x-tags:
+                  - Synapse Modernization
+                  - ToolHive
       description: Delete Customer Logo
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DeleteCustomerLogoRequestViewModel'
+              title: DeleteCustomerLogoRequestViewModel
+              description: Delete Customer Logo Request View Model
+              allOf:
+                - title: BaseCommandRequestViewModel
+                  type: object
+                  description: Base Command Request
+                  properties:
+                    UserId:
+                      type: string
+                    UserName:
+                      type: string
+                    Environment:
+                      type: string
+                    ActivityId:
+                      type:
+                        - string
+                        - 'null'
+                    ParentPageId:
+                      type:
+                        - string
+                        - 'null'
+                    PageId:
+                      type:
+                        - string
+                        - 'null'
+                    SessionId:
+                      type:
+                        - string
+                        - 'null'
+                    Route:
+                      type:
+                        - string
+                        - 'null'
+                    Equipment:
+                      type:
+                        - string
+                        - 'null'
+                    AssignmentId:
+                      type:
+                        - string
+                        - 'null'
+                    DeviceIpV4:
+                      type:
+                        - string
+                        - 'null'
+                    DeviceIpV6:
+                      type:
+                        - string
+                        - 'null'
+                    UserAgent:
+                      type:
+                        - string
+                        - 'null'
+                    Path:
+                      type:
+                        - string
+                        - 'null'
+                    EpochTime:
+                      type:
+                        - string
+                        - 'null'
+                    ServerHostName:
+                      type:
+                        - string
+                        - 'null'
+                    Pid:
+                      type:
+                        - string
+                        - 'null'
+                    BusinessUnitId:
+                      type: string
+                    ApiRequestId:
+                      type:
+                        - string
+                        - 'null'
+                    AccountId:
+                      type: string
+                    Account:
+                      type: string
+                    BusinessUnit:
+                      type: string
+                    WareHouseId:
+                      type:
+                        - string
+                        - 'null'
+                  x-tags:
+                    - Synapse Modernization
+                    - ToolHive
+                - type: object
+                  properties:
+                    Id:
+                      type: string
+              x-tags:
+                - Synapse Modernization
+                - ToolHive
         description: Request body
 components:
   schemas:
@@ -251,7 +1210,91 @@ components:
       description: Create Customer
       x-examples: {}
       allOf:
-        - $ref: '#/components/schemas/BaseCommandRequestViewModel'
+        - title: BaseCommandRequestViewModel
+          type: object
+          description: Base Command Request
+          properties:
+            UserId:
+              type: string
+            UserName:
+              type: string
+            Environment:
+              type: string
+            ActivityId:
+              type:
+                - string
+                - 'null'
+            ParentPageId:
+              type:
+                - string
+                - 'null'
+            PageId:
+              type:
+                - string
+                - 'null'
+            SessionId:
+              type:
+                - string
+                - 'null'
+            Route:
+              type:
+                - string
+                - 'null'
+            Equipment:
+              type:
+                - string
+                - 'null'
+            AssignmentId:
+              type:
+                - string
+                - 'null'
+            DeviceIpV4:
+              type:
+                - string
+                - 'null'
+            DeviceIpV6:
+              type:
+                - string
+                - 'null'
+            UserAgent:
+              type:
+                - string
+                - 'null'
+            Path:
+              type:
+                - string
+                - 'null'
+            EpochTime:
+              type:
+                - string
+                - 'null'
+            ServerHostName:
+              type:
+                - string
+                - 'null'
+            Pid:
+              type:
+                - string
+                - 'null'
+            BusinessUnitId:
+              type: string
+            ApiRequestId:
+              type:
+                - string
+                - 'null'
+            AccountId:
+              type: string
+            Account:
+              type: string
+            BusinessUnit:
+              type: string
+            WareHouseId:
+              type:
+                - string
+                - 'null'
+          x-tags:
+            - Synapse Modernization
+            - ToolHive
         - type: object
           properties:
             Name:
@@ -307,7 +1350,19 @@ components:
         example-1:
           CustomerId: fee63bf3-6cf1-4b7c-8f89-57f658895684
       allOf:
-        - $ref: '#/components/schemas/BaseCommandResponseViewModel'
+        - title: BaseCommandResponseViewModel
+          type: object
+          properties:
+            IsError:
+              type: boolean
+            ErrorMessage:
+              type:
+                - string
+                - 'null'
+          description: Base Command Response
+          x-tags:
+            - Synapse Modernization
+            - ToolHive
         - type: object
           properties:
             CustomerId:
@@ -319,7 +1374,91 @@ components:
     UpdateCustomerRequestViewModel:
       title: UpdateCustomerRequest
       allOf:
-        - $ref: '#/components/schemas/BaseCommandRequestViewModel'
+        - title: BaseCommandRequestViewModel
+          type: object
+          description: Base Command Request
+          properties:
+            UserId:
+              type: string
+            UserName:
+              type: string
+            Environment:
+              type: string
+            ActivityId:
+              type:
+                - string
+                - 'null'
+            ParentPageId:
+              type:
+                - string
+                - 'null'
+            PageId:
+              type:
+                - string
+                - 'null'
+            SessionId:
+              type:
+                - string
+                - 'null'
+            Route:
+              type:
+                - string
+                - 'null'
+            Equipment:
+              type:
+                - string
+                - 'null'
+            AssignmentId:
+              type:
+                - string
+                - 'null'
+            DeviceIpV4:
+              type:
+                - string
+                - 'null'
+            DeviceIpV6:
+              type:
+                - string
+                - 'null'
+            UserAgent:
+              type:
+                - string
+                - 'null'
+            Path:
+              type:
+                - string
+                - 'null'
+            EpochTime:
+              type:
+                - string
+                - 'null'
+            ServerHostName:
+              type:
+                - string
+                - 'null'
+            Pid:
+              type:
+                - string
+                - 'null'
+            BusinessUnitId:
+              type: string
+            ApiRequestId:
+              type:
+                - string
+                - 'null'
+            AccountId:
+              type: string
+            Account:
+              type: string
+            BusinessUnit:
+              type: string
+            WareHouseId:
+              type:
+                - string
+                - 'null'
+          x-tags:
+            - Synapse Modernization
+            - ToolHive
         - type: object
           properties:
             Id:
@@ -375,7 +1514,19 @@ components:
     UpdateCustomerResponseViewModel:
       description: Update Customer Response
       allOf:
-        - $ref: '#/components/schemas/BaseCommandResponseViewModel'
+        - title: BaseCommandResponseViewModel
+          type: object
+          properties:
+            IsError:
+              type: boolean
+            ErrorMessage:
+              type:
+                - string
+                - 'null'
+          description: Base Command Response
+          x-tags:
+            - Synapse Modernization
+            - ToolHive
         - type: object
           properties:
             IsError:
@@ -490,7 +1641,91 @@ components:
         - ToolHive
     UpdateCustomerLogoRequestViewModel:
       allOf:
-        - $ref: '#/components/schemas/BaseCommandRequestViewModel'
+        - title: BaseCommandRequestViewModel
+          type: object
+          description: Base Command Request
+          properties:
+            UserId:
+              type: string
+            UserName:
+              type: string
+            Environment:
+              type: string
+            ActivityId:
+              type:
+                - string
+                - 'null'
+            ParentPageId:
+              type:
+                - string
+                - 'null'
+            PageId:
+              type:
+                - string
+                - 'null'
+            SessionId:
+              type:
+                - string
+                - 'null'
+            Route:
+              type:
+                - string
+                - 'null'
+            Equipment:
+              type:
+                - string
+                - 'null'
+            AssignmentId:
+              type:
+                - string
+                - 'null'
+            DeviceIpV4:
+              type:
+                - string
+                - 'null'
+            DeviceIpV6:
+              type:
+                - string
+                - 'null'
+            UserAgent:
+              type:
+                - string
+                - 'null'
+            Path:
+              type:
+                - string
+                - 'null'
+            EpochTime:
+              type:
+                - string
+                - 'null'
+            ServerHostName:
+              type:
+                - string
+                - 'null'
+            Pid:
+              type:
+                - string
+                - 'null'
+            BusinessUnitId:
+              type: string
+            ApiRequestId:
+              type:
+                - string
+                - 'null'
+            AccountId:
+              type: string
+            Account:
+              type: string
+            BusinessUnit:
+              type: string
+            WareHouseId:
+              type:
+                - string
+                - 'null'
+          x-tags:
+            - Synapse Modernization
+            - ToolHive
         - type: object
           properties:
             Id:
@@ -504,7 +1739,19 @@ components:
     UpdateCustomerLogoResponseViewModel:
       title: UpdateCustomerLogoResponseViewModel
       allOf:
-        - $ref: '#/components/schemas/BaseCommandResponseViewModel'
+        - title: BaseCommandResponseViewModel
+          type: object
+          properties:
+            IsError:
+              type: boolean
+            ErrorMessage:
+              type:
+                - string
+                - 'null'
+          description: Base Command Response
+          x-tags:
+            - Synapse Modernization
+            - ToolHive
         - type: object
           properties:
             IsError:
@@ -521,7 +1768,91 @@ components:
       title: DeleteCustomerLogoRequestViewModel
       description: Delete Customer Logo Request View Model
       allOf:
-        - $ref: '#/components/schemas/BaseCommandRequestViewModel'
+        - title: BaseCommandRequestViewModel
+          type: object
+          description: Base Command Request
+          properties:
+            UserId:
+              type: string
+            UserName:
+              type: string
+            Environment:
+              type: string
+            ActivityId:
+              type:
+                - string
+                - 'null'
+            ParentPageId:
+              type:
+                - string
+                - 'null'
+            PageId:
+              type:
+                - string
+                - 'null'
+            SessionId:
+              type:
+                - string
+                - 'null'
+            Route:
+              type:
+                - string
+                - 'null'
+            Equipment:
+              type:
+                - string
+                - 'null'
+            AssignmentId:
+              type:
+                - string
+                - 'null'
+            DeviceIpV4:
+              type:
+                - string
+                - 'null'
+            DeviceIpV6:
+              type:
+                - string
+                - 'null'
+            UserAgent:
+              type:
+                - string
+                - 'null'
+            Path:
+              type:
+                - string
+                - 'null'
+            EpochTime:
+              type:
+                - string
+                - 'null'
+            ServerHostName:
+              type:
+                - string
+                - 'null'
+            Pid:
+              type:
+                - string
+                - 'null'
+            BusinessUnitId:
+              type: string
+            ApiRequestId:
+              type:
+                - string
+                - 'null'
+            AccountId:
+              type: string
+            Account:
+              type: string
+            BusinessUnit:
+              type: string
+            WareHouseId:
+              type:
+                - string
+                - 'null'
+          x-tags:
+            - Synapse Modernization
+            - ToolHive
         - type: object
           properties:
             Id:
@@ -536,7 +1867,19 @@ components:
         - Synapse Modernization
         - ToolHive
       allOf:
-        - $ref: '#/components/schemas/BaseCommandResponseViewModel'
+        - title: BaseCommandResponseViewModel
+          type: object
+          properties:
+            IsError:
+              type: boolean
+            ErrorMessage:
+              type:
+                - string
+                - 'null'
+          description: Base Command Response
+          x-tags:
+            - Synapse Modernization
+            - ToolHive
         - type: object
           properties:
             Id:

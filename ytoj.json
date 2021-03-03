@@ -1,0 +1,9 @@
+{
+  "yaml": "domain-customers-spec.v1.yaml",
+  "json": "output.json",
+  "schema": "http://json-schema.org/draft-07/schema#",
+  "id": "",
+  "resolveRefs": true,
+  "additionalProperties": false,
+  "indent": 2
+}
